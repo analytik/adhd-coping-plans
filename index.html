@@ -115,22 +115,22 @@
         }
     }
 
-    function handleZoom(context, event) {
-        // console.log('Zoom event.');
-        // console.log(context, event);
+    function handleZoom(event) {
+        if (event.deltaY > 0) {
+            this.cameras.main.setZoom(this.cameras.main.zoom * 0.9);
+        }
+        else if (event.deltaY < 0) {
+            this.cameras.main.setZoom(this.cameras.main.zoom * 1.1);
+        }
     }
 
     function handleDragStart(pointer) {
         view.isDragged = true;
-        console.log('handleDragStart', pointer);
         view.lastX = pointer.downX;
         view.lastY = pointer.downY;
     }
     function handleDragEnd(pointer) {
         view.isDragged = false;
-        console.log('End drag event');
-        view.lastX = pointer.downX;
-        view.lastY = pointer.downY;
     }
     </script>
 
