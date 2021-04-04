@@ -137,10 +137,10 @@
 
     function handleZoom(event) {
         if (event.deltaY > 0) {
-            this.cameras.main.setZoom(Math.floor(this.cameras.main.zoom * 90)/100);
+            this.cameras.main.setZoom(this.cameras.main.zoom * 90/100);
         }
         else if (event.deltaY < 0) {
-            this.cameras.main.setZoom(Math.floor(this.cameras.main.zoom * 110)/100);
+            this.cameras.main.setZoom(this.cameras.main.zoom * 100/90);
         }
     }
 
