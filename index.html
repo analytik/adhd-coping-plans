@@ -19,7 +19,8 @@
     const game = new Phaser.Game(config);
     let controls;
     const view = {
-        isDragged: false
+        isDragged: false,
+        lastX: 0, lastY: 0,
     };
 
     function preload ()
@@ -45,7 +46,10 @@
         }
 		// TODO make a planFile.BoardNames selector
 		const currentBoardNumber = 0;
-		const noteTextProps = {font: 'sans serif', color: 'white'};
+		const noteTextProps = {
+		    fontFamily: 'segoe ui,roboto,oxygen,ubuntu,cantarell,fira sans,droid sans,helvetica neue,sans-serif',
+            fontSize: 12,
+            color: 'white'};
 		const texts = [];
 		const borders = [];
 		const borderPx = 4;
@@ -61,20 +65,26 @@
             if (taskType === 2) {
                 // type note
                 let text1 = this.add.text(x, y, desc, noteTextProps);
+                // text1.setFontSize(11);
                 texts.push(text1);
-                // console.dir(text1);
                 let rekt = this.add.rectangle(x + (text1.width/2) , y + (text1.height/2),
                     text1.width + (borderPx * 4), text1.height + (borderPx * 4), 0x333399);
                 rekt.setStrokeStyle(2, 0x1a65ac);
                 rekt.setDepth(-1000);
                 borders.push(rekt);
             }
+            else if (taskType === 6) {
+                // type arrow
+
+            }
         });
-		console.log('create processed all tasks');
-		console.log(this.input);
+		console.log('create: processed all tasks');
+		// console.log(this.input);
         this.input.on(Phaser.Input.Events.POINTER_WHEEL, handleZoom, this);
-        this.input.on('onpointerup', handleDragEnd, this);
-        this.input.on('onpointerdown', handleDragStart, this);
+        this.input.on('pointerup', handleDragEnd, this);
+        // this.input.on('mouseup', handleDragEnd, this);
+        this.input.on('pointerdown', handleDragStart, this);
+        // this.input.on('mousedown', handleDragStart, this);
         const cursors = this.input.keyboard.createCursorKeys();
 
         const controlConfig = {
@@ -95,6 +105,14 @@
 
 	function update(_update, delta) {
         controls.update(delta);
+        if (view.isDragged) {
+            const pointer = this.input.activePointer;
+            // console.log(pointer);
+            this.cameras.main.scrollX -= (pointer.position.x - view.lastX);
+            view.lastX = pointer.position.x;
+            this.cameras.main.scrollY -= (pointer.position.y - view.lastY);
+            view.lastY = pointer.position.y;
+        }
     }
 
     function handleZoom(context, event) {
@@ -102,16 +120,17 @@
         // console.log(context, event);
     }
 
-    function handleDragStart(pointer, gameObject, dragX, dragY) {
-        console.log('handleDragStart', dragX, dragY);
-        game.camera.x = dragX;
-        game.camera.y = dragY;
+    function handleDragStart(pointer) {
+        view.isDragged = true;
+        console.log('handleDragStart', pointer);
+        view.lastX = pointer.downX;
+        view.lastY = pointer.downY;
     }
-    function handleDragEnd(context, event) {
-        // this.updateGrid(grid);
+    function handleDragEnd(pointer) {
         view.isDragged = false;
-        this.last_pointer_position = null;
-        console.log('End drag event: ');
+        console.log('End drag event');
+        view.lastX = pointer.downX;
+        view.lastY = pointer.downY;
     }
     </script>
 
