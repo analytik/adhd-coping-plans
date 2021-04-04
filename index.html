@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser.min.js"></script>-->
+    <script src="src/vendor/phaser.min.js"></script>
+	<script src="src/vendor/hammer.min.js"></script>
+	<link rel="shortcut icon" href="favicon.gif" />
+</head>
+<body>
+
+    <script>
+    const config = {
+        type: Phaser.AUTO,
+        width: 1920,
+        height: 1200,
+        scene: { preload, create, update }
+    };
+
+    const game = new Phaser.Game(config);
+    let controls;
+    const view = {
+        isDragged: false
+    };
+
+    function preload ()
+    {
+        //this.load.setBaseURL('http://labs.phaser.io');
+        // the current solution is to just manually copy it so I don't have to start
+        // a REAL webserver, as http-server serves .plan as a base64 encoded "image"
+        this.load.text('adhd_plan', 'main_plan.plan.json');
+    }
+
+    function create ()
+    {
+	    console.log('create start');
+		// this.add.text(100, 200, 'this is a test', {color: "white"});
+		let almostJson = this.cache.text.get('adhd_plan');
+		console.log('broken json get');
+		// we need to add an idiotic footer because MasterPlan writes an invalid JSON to optimize seven microseconds of disk operations
+		almostJson = almostJson + '{"IGNORE": 1}]}';
+		const planFile = JSON.parse(almostJson);
+		console.log('json get');
+		if (!planFile.Tasks) {
+            this.add.text(100, 150, 'Fatal error while loading JSON plan file.', {color: "#FF5555"});
+        }
+		// TODO make a planFile.BoardNames selector
+		const currentBoardNumber = 0;
+		const noteTextProps = {font: 'sans serif', color: 'white'};
+		const texts = [];
+		const borders = [];
+		const borderPx = 4;
+		planFile.Tasks.filter(item => {
+		    return item.BoardIndex == currentBoardNumber;
+        }).map(item => {
+            let [x, y, taskType, desc] = [
+                item["Position.X"],
+                item["Position.Y"],
+                item["TaskType.CurrentChoice"],
+                item["Description"],
+            ];
+            if (taskType === 2) {
+                // type note
+                let text1 = this.add.text(x, y, desc, noteTextProps);
+                texts.push(text1);
+                // console.dir(text1);
+                let rekt = this.add.rectangle(x + (text1.width/2) , y + (text1.height/2),
+                    text1.width + (borderPx * 4), text1.height + (borderPx * 4), 0x333399);
+                rekt.setStrokeStyle(2, 0x1a65ac);
+                rekt.setDepth(-1000);
+                borders.push(rekt);
+            }
+        });
+		console.log('create processed all tasks');
+		console.log(this.input);
+        this.input.on(Phaser.Input.Events.POINTER_WHEEL, handleZoom, this);
+        this.input.on('onpointerup', handleDragEnd, this);
+        this.input.on('onpointerdown', handleDragStart, this);
+        const cursors = this.input.keyboard.createCursorKeys();
+
+        const controlConfig = {
+            camera: this.cameras.main,
+            left: cursors.left,
+            right: cursors.right,
+            up: cursors.up,
+            down: cursors.down,
+            acceleration: 0.04,
+            drag: 0.0011,
+            maxSpeed: 1.2
+        };
+
+        controls = new Phaser.Cameras.Controls.SmoothedKeyControl(controlConfig);
+
+        this.cameras.main.setBounds(-8192, -8192, 16384, 16384);
+    }
+
+	function update(_update, delta) {
+        controls.update(delta);
+    }
+
+    function handleZoom(context, event) {
+        // console.log('Zoom event.');
+        // console.log(context, event);
+    }
+
+    function handleDragStart(pointer, gameObject, dragX, dragY) {
+        console.log('handleDragStart', dragX, dragY);
+        game.camera.x = dragX;
+        game.camera.y = dragY;
+    }
+    function handleDragEnd(context, event) {
+        // this.updateGrid(grid);
+        view.isDragged = false;
+        this.last_pointer_position = null;
+        console.log('End drag event: ');
+    }
+    </script>
+
+</body>
+</html>
