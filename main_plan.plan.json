@@ -4,9 +4,9 @@
   "BoardIndex": 0,
   "BoardCount": 2,
   "AutoSave": true,
-  "Pan.X": -389.5257873535156,
-  "Pan.Y": -293.54290771484375,
-  "ZoomLevel": 4,
+  "Pan.X": -357.4649658203125,
+  "Pan.Y": -1054.7430419921875,
+  "ZoomLevel": 3,
   "TaskTransparency": 5,
   "OutlineTasks": true,
   "BracketSubtasks": true,
@@ -305,7 +305,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:07:57",
       "BezierLines": false,
-      "LineEndings": [464, -128]
+      "LineEndings": [848, -144]
     }, 
     {
       "BoardIndex": 0,
@@ -319,11 +319,11 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:08:01",
       "BezierLines": false,
-      "LineEndings": [464, -304]
+      "LineEndings": [528, -192]
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 480,
+      "Position.X": 864,
       "Position.Y": -272,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
@@ -347,8 +347,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 480,
-      "Position.Y": -368,
+      "Position.X": 544,
+      "Position.Y": -256,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -433,12 +433,12 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:17:33",
       "BezierLines": false,
-      "LineEndings": [416, -416]
+      "LineEndings": [528, -304]
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": -576,
+      "Position.X": 544,
+      "Position.Y": -464,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -565,7 +565,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:28:57",
       "BezierLines": false,
-      "LineEndings": [-240, -624]
+      "LineEndings": [-144, -416]
     }, 
     {
       "BoardIndex": 0,
@@ -579,7 +579,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:28:59",
       "BezierLines": false,
-      "LineEndings": [304, -976]
+      "LineEndings": [272, -864]
     }, 
     {
       "BoardIndex": 0,
@@ -593,7 +593,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:29:01",
       "BezierLines": false,
-      "LineEndings": [368, -736]
+      "LineEndings": [400, -624]
     }, 
     {
       "BoardIndex": 0,
@@ -607,12 +607,12 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:29:10",
       "BezierLines": false,
-      "LineEndings": [416, -608]
+      "LineEndings": [480, -496]
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 432,
-      "Position.Y": -688,
+      "Position.X": 496,
+      "Position.Y": -576,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -623,8 +623,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 384,
-      "Position.Y": -928,
+      "Position.X": 416,
+      "Position.Y": -816,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -635,8 +635,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 304,
-      "Position.Y": -1216,
+      "Position.X": 272,
+      "Position.Y": -1104,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -647,8 +647,8 @@
     }, 
     {
       "BoardIndex": 0,
-      "Position.X": 16,
-      "Position.Y": -1184,
+      "Position.X": -32,
+      "Position.Y": -1024,
       "Checkbox.Checked": false,
       "Progression.Current": 0,
       "Progression.Max": 0,
@@ -669,7 +669,7 @@
       "TaskType.CurrentChoice": 6,
       "CreationTime": "Apr 4 2021 13:45:41",
       "BezierLines": false,
-      "LineEndings": [176, -1024]
+      "LineEndings": [160, -864]
     }, 
     {
       "BoardIndex": 1,
@@ -786,5 +786,99 @@
       "CreationTime": "Apr 4 2021 14:14:55",
       "BezierLines": false,
       "LineEndings": [80, 64]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -144,
+      "Position.Y": -480,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "5a) Is it learned helplessness?\nIs this something you can just find online,\nor find in your emails, notes, textbooks?\nIt is something you just need to research?",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Apr 10 2021 11:18:17"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -144,
+      "Position.Y": -496,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Apr 10 2021 11:19:37",
+      "BezierLines": false,
+      "LineEndings": [-144, -544]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": -176,
+      "Position.Y": -640,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "5b) Do you really need help, and do you\nfeel inadequate? Do you feel like you're \nbothering people because of a low self-\nesteem? Are you stubborn about not\ngetting help? Note down your beliefs underlying\nthese feelings for later CBT/etc.",
+      "Selected": false,
+      "TaskType.CurrentChoice": 2,
+      "CreationTime": "Apr 10 2021 11:19:45"
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 48,
+      "Position.Y": 912,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Apr 10 2021 11:53:50",
+      "BezierLines": false,
+      "LineEndings": [48, 976]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 48,
+      "Position.Y": 1088,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Apr 10 2021 11:53:57",
+      "BezierLines": false,
+      "LineEndings": [48, 1136]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 384,
+      "Position.Y": 880,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Apr 10 2021 11:54:03",
+      "BezierLines": false,
+      "LineEndings": [384, 976]
+    }, 
+    {
+      "BoardIndex": 0,
+      "Position.X": 720,
+      "Position.Y": 944,
+      "Checkbox.Checked": false,
+      "Progression.Current": 0,
+      "Progression.Max": 0,
+      "Description": "",
+      "Selected": false,
+      "TaskType.CurrentChoice": 6,
+      "CreationTime": "Apr 10 2021 11:54:08",
+      "BezierLines": false,
+      "LineEndings": [720, 976]
     }, 
     
